@@ -1,0 +1,6 @@
+// @import '~bootstrap/scss/bootstrap'
+
+NavBar {
+  Width: 1440px;
+  Height: 80px;
+}

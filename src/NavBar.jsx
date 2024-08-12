@@ -1,11 +1,8 @@
-import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
-import Navbar from 'react-bootstrap/Navbar';
+import { Button, Form } from 'react-bootstrap';
 
 const NavBar = () => {
   return (
-    <Navbar expand="lg" className="bg-body-tertiary">
-
+    <nav className="shadow-sm navbar navbar-expand-lg navbar-light">
       <Form className="d-flex">
         <Form.Control
           type="search"
@@ -13,10 +10,9 @@ const NavBar = () => {
           className="me-2"
           aria-label="Search"
         />
-        <Button variant="outline-success">Искать</Button>
+        <Button variant="primary" className="btn">ИСКАТЬ</Button>
       </Form>
-
-    </Navbar>
+    </nav >
   )
 }
 

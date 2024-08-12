@@ -1,0 +1,33 @@
+@import '~bootstrap/scss/bootstrap';
+
+nav {
+  width: 1440px;
+  height: 80px;
+
+  background: #00838F;
+
+}
+
+.me-2 {
+  width: 912px;
+  height: 42px;
+  top: 19px;
+  margin-left: 32px;
+  gap: 0px;
+  border-radius: 4px;
+  opacity: 0px;
+}
+
+.btn {
+  background-color: #2196F3;
+
+  width: 105px;
+  height: 42px;
+  top: 19px;
+  left: 952px;
+  padding: 8px 22px 8px 22px;
+  gap: 0px;
+  border-radius: 4px;
+  opacity: 0px;
+
+}

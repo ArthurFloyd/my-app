@@ -1,38 +1,71 @@
-import { Button, Form } from 'react-bootstrap';
-import React, { useState } from 'react';
+import * as React from 'react';
+import { styled, alpha } from '@mui/material/styles';
+import AppBar from '@mui/material/AppBar';
+import Box from '@mui/material/Box';
+import Toolbar from '@mui/material/Toolbar';
+import InputBase from '@mui/material/InputBase';
+import Stack from '@mui/material/Stack';
+import Button from '@mui/material/Button';
+// import { grey } from '@mui/material/colors';
+import shadows from '@mui/material/styles/shadows';
+import { light } from '@mui/material/styles/createPalette';
 
-// import repos from './const';
+const Search = styled('div')(({ theme }) => ({
+  position: 'relative',
+  borderRadius: theme.shape.borderRadius,
+  backgroundColor: alpha(theme.palette.common.white, 0.15),
+  '&:hover': {
+    backgroundColor: alpha(theme.palette.common.white, 0.25),
+  },
+  marginRight: theme.spacing(2),
+  marginLeft: 32,
+  width: 912,
+}));
 
 
-// const searchRepo = () => {
-//   // const response = repos.map((repo) => repo === value);
-//   console.log(value)
-// }
+const StyledInputBase = styled(InputBase)(({ theme }) => ({
+  color: shadows,
+  // vertical padding + font size from searchIcon
+  // paddingLeft: 20,
+  // transition: theme.transitions.create('width'),
+  backgroundColor: light,
+  width: '100%',
+  // width: 912,
+  height: 42,
+  // top: 19,
+  marginLeft: 32,
+  // gap: 0,
+  // borderRadius: 4,
+  // opacity: 0,
+}
+));
 
 const NavBar = () => {
 
-  const [value, setValue] = useState('');
-  // console.log(value)
-
-  // const searchRepo = (e) => {
-  //   console.log(e.target.value)
-  // }
+  const [value, setValue] = React.useState('');
 
   return (
-    <nav className="shadow-sm navbar navbar-expand-lg navbar-light">
-      <Form className="d-flex">
-        <Form.Control
-          type="search"
-          placeholder="Введите поисковый запрос"
-          className="me-2"
-          aria-label="Search"
-          value={value}
-          onChange={(e) => setValue(e.target.value)}
-        />
-        <Button variant="primary" className="btn" onClick={() => console.log(value)}>ИСКАТЬ</Button>
-      </Form>
-    </nav >
-  )
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static">
+        <Toolbar>
+          <Search>
+            <StyledInputBase
+              placeholder="Введите поисковый запрос"
+              inputProps={{ 'aria-label': 'search' }}
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
+            />
+          </Search>
+          <Stack spacing={2} direction="row">
+            <Button variant="contained" onClick={() => console.log(value)}>ИСКАТЬ</Button>
+          </Stack>
+
+
+        </Toolbar>
+      </AppBar>
+
+    </Box >
+  );
 }
 
-export default NavBar;
+export default NavBar

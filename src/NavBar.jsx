@@ -1,22 +1,22 @@
 import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-
-import Button from '@mui/material/Button';
-import { FormControl, OutlinedInput } from '@mui/material';
+import { FormControl, OutlinedInput, Toolbar, Box, AppBar, Button } from '@mui/material';
 
 
 const NavBar = () => {
 
   const [value, setValue] = React.useState('');
+  const inputRef = React.useRef(null);
+
+  React.useEffect(() => {
+    inputRef.current.focus()
+  }, [])
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" sx={{ width: 1440, height: 80, background: '#739ab9' }}>
         <Toolbar>
           <form noValidate autoComplete="off">
-            <FormControl >
+            <FormControl ref={inputRef}>
               <OutlinedInput placeholder="Введите поисковый запрос" sx={{ placeContent: 'italic', width: 912, height: 42, top: 10, background: '#fff' }} value={value} onChange={(e) => setValue(e.target.value)} />
             </FormControl>
           </form>

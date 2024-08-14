@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { FormControl, OutlinedInput, Toolbar, Box, AppBar, Button } from '@mui/material';
-
+import {
+  FormControl, OutlinedInput, Toolbar, Box, AppBar, Button,
+} from '@mui/material';
 
 const NavBar = () => {
-
   const [value, setValue] = useState('');
   const inputRef = useRef(null);
 
   useEffect(() => {
-    inputRef.current.focus()
-  }, [])
+    inputRef.current.focus();
+  }, []);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -17,16 +17,29 @@ const NavBar = () => {
         <Toolbar>
           <form noValidate autoComplete="off">
             <FormControl ref={inputRef}>
-              <OutlinedInput placeholder="Введите поисковый запрос" sx={{ placeContent: 'italic', width: 912, height: 42, top: 10, background: '#fff' }} value={value} onChange={(e) => setValue(e.target.value)} />
+              <OutlinedInput
+                placeholder="Введите поисковый запрос"
+                sx={{
+                  placeContent: 'italic', width: 912, height: 42, top: 10, background: '#fff',
+                }}
+                value={value}
+                onChange={(e) => setValue(e.target.value)}
+              />
             </FormControl>
           </form>
-          <Button variant="contained" onClick={() => console.log(value)} sx={{ top: 9, left: 6, padding: "8px 22px 8px 22px", gap: 0, background: '#113047' }}>ИСКАТЬ</Button>
-
+          <Button
+            variant="contained"
+            onClick={() => console.log(value)}
+            sx={{
+              top: 9, left: 6, padding: '8px 22px 8px 22px', gap: 0, background: '#113047',
+            }}
+          >
+            ИСКАТЬ
+          </Button>
         </Toolbar>
       </AppBar>
-
-    </Box >
+    </Box>
   );
-}
+};
 
-export default NavBar
+export default NavBar;

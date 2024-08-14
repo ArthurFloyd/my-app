@@ -1,13 +1,13 @@
-import * as React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { FormControl, OutlinedInput, Toolbar, Box, AppBar, Button } from '@mui/material';
 
 
 const NavBar = () => {
 
-  const [value, setValue] = React.useState('');
-  const inputRef = React.useRef(null);
+  const [value, setValue] = useState('');
+  const inputRef = useRef(null);
 
-  React.useEffect(() => {
+  useEffect(() => {
     inputRef.current.focus()
   }, [])
 

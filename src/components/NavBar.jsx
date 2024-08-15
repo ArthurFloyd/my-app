@@ -3,6 +3,9 @@ import {
   FormControl, OutlinedInput, Toolbar, Box, AppBar, Button,
 } from '@mui/material';
 
+import { useGetReposQuery } from '../api/githubRepoApi';
+// import { store } from './store/index.js';
+
 const NavBar = () => {
   const [value, setValue] = useState('');
   const inputRef = useRef(null);
@@ -10,6 +13,8 @@ const NavBar = () => {
   useEffect(() => {
     inputRef.current.focus();
   }, []);
+
+  const { data } = useGetReposQuery(value);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -29,7 +34,9 @@ const NavBar = () => {
           </form>
           <Button
             variant="contained"
-            onClick={() => console.log(value)}
+            onClick={() => {
+              console.log('data', data);
+            }}
             sx={{
               top: 9, left: 6, padding: '8px 22px 8px 22px', gap: 0, background: '#113047',
             }}

@@ -1,14 +1,17 @@
-import NavBar from './NavBar';
-import HomePage from './Home';
+import { Provider } from 'react-redux';
+
+import NavBar from './components/NavBar';
+import HomePage from './components/Home';
+import { store } from './store/index.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.scss';
 
 const App = () => (
-  <div>
+  <Provider store={store}>
     <NavBar />
     <HomePage />
-  </div>
+  </Provider>
 );
 
 export default App;

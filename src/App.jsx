@@ -1,7 +1,8 @@
 import { Provider } from 'react-redux';
 
 import NavBar from './components/NavBar';
-import HomePage from './components/Home';
+// import HomePage from './components/Home';
+import SearchPage from './components/Search';
 import { store } from './store/index.js';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -10,7 +11,8 @@ import './App.scss';
 const App = () => (
   <Provider store={store}>
     <NavBar />
-    <HomePage />
+    {/* <HomePage /> */}
+    <SearchPage />
   </Provider>
 );
 

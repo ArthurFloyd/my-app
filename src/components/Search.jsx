@@ -24,10 +24,16 @@ const columns = [
 
 const SearchPage = () => (
   <div>
-    <h1>Результаты поиска</h1>
-    <Box sx={{ height: 400, width: '100%' }}>
-      <DataGrid rows={rows} columns={columns} />
-    </Box>
+
+    <div className="row">
+      <h1>Результаты поиска</h1>
+      <Box sx={{ height: 400, width: 970 }}>
+        <DataGrid rows={rows} columns={columns} />
+      </Box>
+    </div>
+    <div className="result">
+      Выберете репозиторий
+    </div>
   </div>
 );
 
